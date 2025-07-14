@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I Love You Kinju</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 4em;
+      color: #fff;
+      text-shadow: 0 0 20px #ff0055, 0 0 40px #ff3377;
+      animation: glow 2s infinite alternate;
+    }
+
+    .kinju {
+      font-size: 3em;
+      color: #fff;
+      font-weight: bold;
+      animation: heartbeat 1.5s infinite;
+      text-shadow: 0 0 10px #ff99cc;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-top: 20px;
+      color: #fff;
+      text-shadow: 0 0 5px #000;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff0055, 0 0 20px #ff3377;
+      }
+      to {
+        text-shadow: 0 0 30px #ff3388, 0 0 60px #ff99cc;
+      }
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Floating hearts */
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(45deg);
+      animation: floatHearts 6s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        bottom: -20px;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        transform: translateX(-50px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="hearts">
+    <!-- Randomly scattered hearts -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 25%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 85%; animation-delay: 4s;"></div>
+  </div>
+
+  <div class="container">
+    <h1>I Love You</h1>
+    <div class="kinju">Kinju 💖</div>
+    <p>You are the reason behind my smile,<br/>
+    the love of my life,<br/>
+    and my forever valentine. 💕</p>
+  </div>
+</body>
+</html>
